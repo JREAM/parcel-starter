@@ -1,0 +1,5 @@
+*.log
+.cache/
+npm_modules/
+dist/*
+build/*

@@ -1,0 +1,47 @@
+{
+  "name": "parcel-starter",
+  "version": "1.0.0",
+  "description": "A nice little starter with Parcel",
+  "main": "./src/*.hbs",
+  "main_subfolders": "./src/**/*.hbs",
+  "scripts": {
+    "start": "parcel serve $npm_package_main",
+    "build": "parcel build $npm_package_main --no-source-maps",
+    "dev": "npm run start",
+    "prod": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "parcelCleanPaths": [
+    "dist/*.*",
+    "build/*.*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JREAM/parcel-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JREAM/parcel-starter/issues"
+  },
+  "homepage": "https://github.com/JREAM/parcel-starter#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^5.10.0",
+    "eslint-config-eslint": "^5.0.1",
+    "eslint-config-node": "^4.0.0",
+    "eslint-config-promise": "^1.2.6",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "node-sass": "^4.11.0",
+    "parcel-bundler": "^1.11.0",
+    "parcel-plugin-clean-easy": "^1.0.2"
+  },
+  "dependencies": {
+    "bulma": "^0.7.2",
+    "parcel-plugin-handlebars": "^0.4.4"
+  }
+}
