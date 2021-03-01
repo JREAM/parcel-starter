@@ -1,5 +1,5 @@
 /**
 * Keep vendors separate from the app, as vendors don't change much
 */
-@import './vendors/initial-variables.sass';
+@import './_var_bulma.sass';
 @import '../../../node_modules/bulma/bulma.sass';

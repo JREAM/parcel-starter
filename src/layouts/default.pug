@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    link(href="../../src/assets/styles/vendor.scss")
+    link(href="../../src/assets/styles/app.scss")
+  body
+    block nav
+      include partials/nav.pug
+    block header
+      include partials/header.pug
+
+    block content
+      //- Dynamic Content
+
+    block footer
+      include partials/footer.pug
+
+script(src="../assets/scripts/vendor.js")
+script(src="../assets/scripts/app.js")

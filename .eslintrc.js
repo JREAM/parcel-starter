@@ -3,21 +3,31 @@
  * MIT / Jesse Boyer <JREAM>
  * -----------------------------------
  * @install
-    yarn add -D babel-eslint eslint eslint-plugin-import eslint-config-eslint \
-      eslint-config-node eslint-config-promise eslint-plugin-node
-
-      yarn add -D babel-preset-env && echo '{"presets": ["env"]}' > .babelrc
+    yarn add -D \
+      @babel/eslint \
+      @babel/preset-env \
+      eslint \
+      eslint-plugin-import \
+      eslint-config-eslint \
+      eslint-config-node \
+      eslint-config-promise \
+      eslint-plugin-node \
+      && echo '{"presets": ["@babel/preset-env"]}' > .babelrc
  */
 module.exports = {
   root: true,
-  parser: 'babel-eslint',
+  parser: '@babel/eslint',
+  extends: [
+    'eslint:recommended'
+  ],
   env: {
     browser: true,
     node: true,
     es6: true
   },
   plugins: [
-    'import'
+    'import',
+    'svelte3'
   ],
   globals: {
     lodash: true,
@@ -25,15 +35,18 @@ module.exports = {
     moment: true
   },
   parserOptions: {
-    sourceType: 'module',
     ecmaVersion: 7,
+    sourceType: 'module',
     ecmaFeatures: {
       impliedStrict: false,
-      jsx: false
+      // jsx: false
     }
   },
-  extends: [
-    'eslint:recommended'
+  overrides: [
+    {
+      files: ['*.svelte'],
+      processor: 'svelte3/svelte3'
+    }
   ],
   rules: {
     'array-bracket-spacing': [2, 'always'],
